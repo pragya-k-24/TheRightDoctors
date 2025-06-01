@@ -1,0 +1,25 @@
+<h2>People List</h2>
+
+<table class="people-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of people">
+      <td>{{ person.id }}</td>
+      <td>{{ person.name }}</td>
+      <td>{{ person.email }}</td>
+      <td>{{ person.username }}</td>
+      <td>
+        <a class="action-link" [routerLink]="['/edit', person.id]">Edit</a> |
+        <a class="action-link" [routerLink]="['/delete', person.id]">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

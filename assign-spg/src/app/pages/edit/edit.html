@@ -1,0 +1,39 @@
+<h2>Edit Person</h2>
+
+<!-- Simple form bound to person object -->
+<form (ngSubmit)="updatePerson()" #editForm="ngForm">
+  <label for="name">Name:</label><br />
+  <input
+    type="text"
+    id="name"
+    name="name"
+    [(ngModel)]="person.name"
+    required
+  /><br /><br />
+
+  <label for="email">Email:</label><br />
+  <input
+    type="email"
+    id="email"
+    name="email"
+    [(ngModel)]="person.email"
+    required
+  /><br /><br />
+
+  <label for="username">Username:</label><br />
+  <input
+    type="text"
+    id="username"
+    name="username"
+    [(ngModel)]="person.username"
+    required
+  /><br /><br />
+
+  <!-- Disable submit if form invalid -->
+  <button type="submit" [disabled]="!editForm.form.valid">Update</button>
+</form>
+
+<!-- Link back to list -->
+<p>
+  <a routerLink="/list">Back to List</a>
+</p>
